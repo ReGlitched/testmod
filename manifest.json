@@ -1,8 +1,8 @@
 {
     "name": "DoubleBarrel",
     "version_number": "1.2.3",
-    "website_url": "",
-    "description": "",
+    "website_url": "https://http.cat/status/200",
+    "description": "This is a test mod",
     "dependencies": [
     ]
 }
