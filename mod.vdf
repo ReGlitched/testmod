@@ -1,0 +1,13 @@
+"mod"
+{
+	"name" "DoubleBarrel"
+	"id" "doublebarrel"
+	"description" ""
+	"version" "1.0.0"
+	"author" "ReGlitched"
+
+	"LocalizationFiles"
+	{
+		"resource/localization/doublebarrel_%language%.txt" "1"
+	}
+}

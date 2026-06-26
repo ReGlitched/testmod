@@ -1,0 +1,52 @@
+#if UI
+global function UICodeCallback_doublebarrel_ModInit
+#endif
+#if SERVER
+global function CodeCallback_doublebarrel_ModInit
+#endif
+#if CLIENT
+global function ClientCodeCallback_doublebarrel_ModInit
+#endif
+
+#if UI
+void function UICodeCallback_doublebarrel_ModInit()
+{
+	AddUICallback_OnDevMenuLoaded( DBWeaponMenu_Init )
+}
+
+void function DBWeaponMenu_Init()
+{
+	SetupDevCommand( "Equip Double Barrel", "give mp_weapon_shotgun_doublebarrel" )
+}
+#endif
+
+#if SERVER
+void function CodeCallback_doublebarrel_ModInit()
+{
+	RegisterTheBarrel()
+}
+#endif
+
+#if CLIENT
+void function ClientCodeCallback_doublebarrel_ModInit()
+{
+	RegisterTheBarrel()
+}
+#endif
+
+#if CLIENT || SERVER || UI
+void function RegisterTheBarrel()
+{
+	CustomWeaponData weaponData
+	weaponData.className = "mp_weapon_shotgun_doublebarrel"
+	weaponData.name = "Double Barrel"
+	weaponData.hudIcon = "$\"\""
+	weaponData.weaponType = "shotgun"
+	weaponData.pickupSound1p = "survival_loot_pickup_weapon_rspn101"
+	weaponData.pickupSound3p = "survival_loot_pickup_3p_weapon_rspn101"
+	weaponData.tier = eLootTier.COMMON
+	weaponData.supportedAttachments = ["sight"]
+	
+	RegisterModWeapon(weaponData, false)
+}
+#endif

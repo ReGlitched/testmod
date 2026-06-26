@@ -1,0 +1,16 @@
+When: "SERVER || CLIENT || UI"
+Scripts:
+[
+	sh_barrel.gnut
+]
+
+When: "UI"
+Scripts:
+[
+]
+
+When: "SERVER || CLIENT"
+Scripts:
+[
+	weapons/mp_weapon_shotgun_doublebarrel.nut
+]
